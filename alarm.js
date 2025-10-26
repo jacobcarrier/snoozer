@@ -45,6 +45,16 @@ function calculateTimings(wakeUpTime) {
 
 // Function to start the program
 function startProgram() {
+	document.querySelector('#time').innerHTML = `${
+		['12', '00', '00'].map(val => `
+			<div class="time-card">
+				<div class="card-top"></div>
+				<div class="separator"></div>
+				<div class="card-bottom"></div>
+				<div class="number"><b>${val}</b></div>
+			</div>
+		`).join('')
+	}`;
 	console.log('hello');
 	document.querySelectorAll('.time-section p').forEach(console.log);
 	// const [hours, minutes] = wakeUpTime.split(':').map(Number);
@@ -56,4 +66,6 @@ function startProgram() {
 }
 
 // Start the program
-startProgram();
+document.addEventListener('DOMContentLoaded', () => {
+	startProgram();
+});
